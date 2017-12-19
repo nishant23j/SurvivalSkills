@@ -117,9 +117,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">History</a></li>
+            <li><a data-toggle="tab" href="#menu1">Block</a></li>
+            <li><a data-toggle="tab" href="#menu2">Order</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
             <div class="col-xs-12 col-lg-12 col-md-12">
-                <h2>Order History</h2>
+                <h2>Block List</h2>
                 <table class="fold-table">
                     <thead>
                         <tr>
@@ -141,8 +147,8 @@
                                             <tr>
                                                 <th>Block</th>
                                                 <th>No of Orders</th>
-                                                <th>Market </th>
-                                                <th>Status</th>
+                                                <th>Block Price</th>
+                                                <th>Market Price</th>
                                                 <th>Execution</th>
                                             </tr>
                                         </thead>
@@ -150,7 +156,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
                                                 </td>
@@ -158,7 +165,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
                                                 </td>
@@ -166,7 +174,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
                                                 </td>
@@ -191,7 +200,8 @@
                                             <tr>
                                                 <th>Block</th>
                                                 <th>No of Orders</th>
-                                                <th>Check Staus</th>
+                                                <th>Block Price</th>
+                                                <th>Market Price</th>
                                                 <th>Status</th>
                                                 <th>Execution</th>
                                             </tr>
@@ -200,7 +210,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
                                                 </td>
@@ -208,7 +219,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
@@ -217,7 +229,8 @@
                                             <tr>
                                                 <td>Block ID</td>
                                                 <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Status</button>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
+                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
                                                 <td>Pending</td>
                                                 <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
                                                 </td>
@@ -227,11 +240,102 @@
                                 </div>
                             </td>
                         </tr>
-
-
                     </tbody>
                 </table>
             </div>
+        </div>
+         
+    
+    
+        <div id="menu1" class="tab-pane fade">
+      
+       <div class="col-xs-12 col-lg-12 col-md-12">
+                <h2>List of Orders in a block</h2>
+                <table class="fold-table">
+                    <thead>
+                        <tr>
+                            <th>BLOCK IDs</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="view">
+                            <td>BLOCK ID 1</td>
+                            
+                        </tr>
+                        <tr class="fold">
+                            <td colspan="7">
+                                <div class="fold-content">
+                                    <h3>Block ID 1</h3>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ORDER ID</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="view">
+                            <td>Block ID 2</td>
+                            
+
+                        </tr>
+                        <tr class="fold">
+                            <td colspan="7">
+                                <div class="fold-content">
+                                    <h3>Block ID 2</h3>
+                                   
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ORDER ID</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td>ORDER ID</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Order History</h3>
+      <p>ok</p>
+    </div>
+        </div>        
 
 
             &nbsp; &nbsp;
