@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+
+
+
+
+</head>
+
+<body >
+    <div class="container" id="con">
+
+        <div class="row">
+            <div align="center" class="col-xs-12 col-lg-12 col-md-12"><img src="https://img00.deviantart.net/1fe5/i/2011/257/b/1/company_logo_design_idea_2_by_mancai-d49tpms.jpg" alt="Alternate" style='width:100%'></div>
+
+        </div>
+        &nbsp; &nbsp;
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12" align="center">
+                <form method="GET">
+                    <div class="form-group">
+                        <label for="Name">Username :</label>
+                        <input type="Name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Your Name" required>
+                        <small id="emailHelp" class="form-text text-muted">For Restricted Users Only</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Password :</label>
+                        <input type="password" class="form-control" id="id" placeholder="Your Password" min='11111' max='99999' required>
+                    </div>
+                    <div class="form-check">
+
+                    </div>
+                    <div align="center">
+						
+                        <input type="button" align="center" class="btn btn-4 btn-4a" value="Submit" id="submit" width="100" height="60" onclick="validate()" />
+							
+							
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+
+    <div class="row">
+        <div class='col-xs-12 col-md-12 col-lg-12'>
+            <footer id="footerlogo" align="center">
+                <hr>Powered By:<br>
+                <img src="https://www.kurtosys.com/wp-content/uploads/2017/07/SapientGM-logo.png" class="img-rounded" alt="Cinque Terre" width="160" height="25"> &nbsp;
+            </footer>
+        </div>
+    </div>
+
+   <script type="text/javascript">
+	   /*
+	function validate() {
+ 
+    var username = $('#name').val();
+    var password = $('#id').val();
+
+    if(password == ""){
+       alert("Please enter a Password");
+       $('#id').focus();
+       return false;
+    }
+
+    if(username == ""){
+       alert("Please enter a Username");
+       $('#name').focus();
+       return false;
+    }
+
+    if(username != '' && password != '') {
+        $.ajax({
+            url: 'http://universe.tc.uvu.edu/cs2550/assignments/PasswordCheck/check.php',
+            type: 'POST',
+            data: {
+                username: username,
+                password: password
+            },
+            success: function(data) {
+
+                var obj = JSON.parse(data);
+
+                if(obj.result != 'invalid') {
+                    alert("Login succeeded");
+                  
+				  
+				  if(obj.type="Trader"){
+				  
+                    window.location.href = 'home.html';
+                }   
+				else{
+				
+				window.location.href='home1.html';
+				}
+            }
+        });
+    } 
+}); 
+	
+	*/
+	
+	
+	</script>
+</body>
+
+
+</html>

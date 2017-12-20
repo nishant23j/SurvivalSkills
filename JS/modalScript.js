@@ -31,7 +31,4 @@
              {
                $('#myModal').modal("show");
              }
-             function myModalStatus()
-                         {
-                           $('#StatusModal').modal("show");
-                         }
+             

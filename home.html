@@ -2,42 +2,61 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/home.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="JS/main.js"></script>
-    <script src ="JS/modalScript.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/home.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+	<script type="text/javascript" src="JS/home.js"></script>
+	<script type="text/javascript" src="JS/modalScript.js"></script>
+
 </head>
 
 <body onload="setData()">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
-                <div class="jumbotron">
-                    <h1 class="display-3">Hello
-                        <span id="name1">ss</span>
-                    </h1>
-                    <p class="lead">
-                        <span id="id1"></span>
-                    </p>
-                    <p class="lead">Registered At:
-                        <span id="time1"></span>
-                    </p>
-                    <hr class="my-4">
+	<div class="container">
+		<div class="row">
 
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-6 col-md-6">
-                                                        <div class="container">
-                                                
-                                                          <!-- Trigger the modal with a button -->
-                                                          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Configure Block</button>
+			<div class="example3">
+				<nav class="navbar navbar-default navbar-static-top">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+							<a class="navbar-brand" href="http://disputebills.com"><img src="https://www.liquidforcect.co.za/wp-content/uploads/2017/11/Bitcoin_Logo_Horizontal_Dark-4800px.png" alt="Logo">
+        </a>
+						</div>
+						<div id="navbar3" class="navbar-collapse navbar-default collapse">
+							<ul class="nav navbar-nav navbar-right bc">
+								<li class="active bc1" data-toggle="modal" data-target="#myModal"><a href="#myModal"><strong>Configure Block</strong></a></li>
+								
+								<li class="active bc1">
+									<a href="index.html">
+										<strong>Log Out</strong>
+                                        
+                                    </a>
+								</li>
+							</ul>
+						</div>
+						<!--/.nav-collapse -->
+					</div>
+					<!--/.container-fluid -->
+				</nav>
+			</div>
 
-                                                          <!-- Modal -->
-                                                          <div class="modal fade" id="myModal" role="dialog">
-                                                            <div class="modal-dialog">
+
+		</div>
+			<!--modal of configuring the block starts  -->
+		<div class="modal fade" id="myModal" role="dialog">
+                                                        <div class="modal-dialog">
                                                               <!-- Modal content-->
-                                                              <div class="modal-content">
+                                                            <div class="modal-content">
                                                                 <div class="modal-header">
                                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                   <h4 class="modal-title">Set the size of the block.</h4>
@@ -52,24 +71,26 @@
                                                                 <div class="modal-footer">
                                                                   <button type="button" class="btn btn-default" data-dismiss="modal" onClick="putValue();">Apply</button>
                                                                 </div>
-                                                              </div>
-
                                                             </div>
-                                                          </div>
-                                                            <div class="form-group">
-                                                                          <label for="Enter"> Current Block Size is: </label>
 
-                                                            </div>
-                                                            <h3>
+                                                        </div>
+        </div>
+<!-- configuring modal ends here -->
+<!-- showing size of block code starts here -->
+		<div class="form-group">
+                                                                        
+            <label for="Enter"> Current Block Size is: <p id="blockSizeTextBox"></p>
+			</label>
 
-                                                                <p id="blockSizeTextBox"></p>
+                </div>
+                   
+                        <p id="blockSizeTextBox"></p>
 
-                                                            </h3>
-
-
-                                                            <div class="modal fade" id="myModal1" role="dialog">
-                                                            <div class="modal-dialog">
-                                                              <!-- Modal content-->
+                    <!-- showing size of block code ends here -->
+<!-- Modal for showing number less than 30 and greater thann 0  starts here-->
+					<div class="modal fade" id="myModal1" role="dialog">
+                                            <div class="modal-dialog">
+                                                   <!-- Modal content-->
                                                               <div class="modal-content">
                                                                 <div class="modal-header">
                                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -80,18 +101,24 @@
                                                                   <button type="button" class="btn btn-default" data-dismiss="modal" onClick="showModal()">Ok</button>
                                                                 </div>
                                                               </div>
-
-                                                            </div>
-                                                          </div>
-                                                            
-                                                             <div class="modal fade" id="StatusModal" role="dialog">
+                                            </div>
+                    </div>
+<!-- Modal for showing number less than 30 and greater thann 0  ends here-->
+<!-- Modal for showing market Price starts -->
+                    <div class="modal fade" id="marketPriceModal" role="dialog">
                                                             <div class="modal-dialog">
                                                               <!-- Modal content-->
                                                               <div class="modal-content">
                                                                 <div class="modal-header">
                                                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                  <h4 class="modal-title">Your Status will be here.</h4>
+                                                                  <h4 class="modal-title">Market price of the Block is:</h4>
                                                                 </div>
+                                                                
+                                                                <div class="modal-body">
+															        
+															        <input type="text" name="marketPriceId" id="marketPriceId" value=""/>
+															    </div>
+
 
                                                                 <div class="modal-footer">
                                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
@@ -99,295 +126,261 @@
                                                               </div>
 
                                                             </div>
-                                                          </div>
-
-
-                                                        </div>
-
-                        </div>
-
-<!--                            <--<button type="button" class="btn btn-default">Config Blocks</button>-->
-                        
-
-<!--                        <--<div class="col-xs-12 col-lg-6 col-md-6">-->
-
-<!--                            <--<button type="button" class="btn btn-default">Order Status</button>-->
-<!--                        </div>-->
                     </div>
-                </div>
-            </div>
-        </div>
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">History</a></li>
-            <li><a data-toggle="tab" href="#menu1">Block</a></li>
-            <li><a data-toggle="tab" href="#menu2">Order</a></li>
-        </ul>
-        <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
-            <div class="col-xs-12 col-lg-12 col-md-12">
-                <h2>Block List</h2>
-                <table class="fold-table">
-                    <thead>
-                        <tr>
-                            <th>SYMBOL</th>
-                            <th>TYPE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="view">
-                            <td>MRF</td>
-                            <td>BUY</td>
-                        </tr>
-                        <tr class="fold">
-                            <td colspan="7">
-                                <div class="fold-content">
-                                    <h3>MRF</h3>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Block</th>
-                                                <th>No of Orders</th>
-                                                <th>Block Price</th>
-                                                <th>Market Price</th>
-                                                <th>Execution</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="view">
-                            <td>OIL</td>
-                            <td>SELL</td>
+<!-- Modal for showing market Price ends -->
+<!-- Modal for showing current Price starts -->
+					<div class="modal fade" id="currentPriceModal" role="dialog">
+                                                            <div class="modal-dialog">
+                                                              <!-- Modal content-->
+                                                              <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                  <h4 class="modal-title">Current Block Price is.</h4>
+                                                                </div>
+                                                                 <div class="modal-body">
+															        
+															        <input type="text" name="currentPriceId" id="currentPriceId" value=""/>
+															    </div>
 
-                        </tr>
-                        <tr class="fold">
-                            <td colspan="7">
-                                <div class="fold-content">
-                                    <h3>OIL</h3>
-                                   
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Block</th>
-                                                <th>No of Orders</th>
-                                                <th>Block Price</th>
-                                                <th>Market Price</th>
-                                                <th>Status</th>
-                                                <th>Execution</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Block ID</td>
-                                                <td>15</td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td><button type="button" onclick="myModalStatus()" class="btn-default">Check</button></td>
-                                                <td>Pending</td>
-                                                <td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-         
-    
-    
-        <div id="menu1" class="tab-pane fade">
-      
-       <div class="col-xs-12 col-lg-12 col-md-12">
-                <h2>List of Orders in a block</h2>
-                <table class="fold-table">
-                    <thead>
-                        <tr>
-                            <th>BLOCK IDs</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="view">
-                            <td>BLOCK ID 1</td>
-                            
-                        </tr>
-                        <tr class="fold">
-                            <td colspan="7">
-                                <div class="fold-content">
-                                    <h3>Block ID 1</h3>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>ORDER ID</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                               
-                                            </tr>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="view">
-                            <td>Block ID 2</td>
-                            
+                                                                <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                                                                </div>
+                                                              </div>
 
-                        </tr>
-                        <tr class="fold">
-                            <td colspan="7">
-                                <div class="fold-content">
-                                    <h3>Block ID 2</h3>
-                                   
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>ORDER ID</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>ORDER ID</td>
-                                                
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Order History</h3>
-      <p>ok</p>
-    </div>
-        </div>        
+                                                            </div>
+                    </div>
+
+<!-- Modal for showing current Price ends -->
+		<script id="table-template" type="text/x-handlebars-template">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-lg-8 col-md-8">
+						<h2>Blocks</h2>
 
 
-            &nbsp; &nbsp;
-            <footer id="footerlogo" align="center">
-                <Strong>Application By :</Strong>
-                <br/>
-                <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAQjAAAAJDRhN2FhNzkyLTc5MTktNDAxOS1hOTNmLWRkYWZlZTE5MDhkNg.png" class="img-rounded" alt="Cinque Terre" width="70" height="70">
-            </footer>
-            
-            
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-            <script>
-                function setData() {
-                    
-                    var d = new Date();
-                    var datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
-                        d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
-                    if (typeof(localStorage) != "undefined") {
-                        document.getElementById("name1").innerHTML = localStorage.name;
-                        document.getElementById("id1").innerHTML = localStorage.id;
-                        document.getElementById("time1").innerHTML = datestring;
-                        document.getElementById("blockSizeTextBox").innerHTML=localStorage.blockSize;
-                    }
-                }
-              
-
-                var i = 0;
-                $('button').each(function() {
-                    $(this).attr('id', i);
-                    i++;
-                });
+						<table class="fold-table">
+							<thead>
+								<tr>
+									<th>SYMBOL</th>
+									<th>TYPE</th>
+								</tr>
+							</thead>
+							<tbody>
 
 
-                function checkTime(i) {
-                    if (i < 10) {
-                        i = "0" + i
-                    }; // add zero in front of numbers < 10
-                    return i;
-                }
+								{{#each this}}
 
-                function change(click) {
-                    document.getElementById(click).innerHTML = "Executed";
-                    $('#' + click).css("background-color", "green");
-                }
+								<tr class="view">
+									<td>{{name}}</td>
+									<td>{{type}}</td>
+								</tr>
+								<tr class="fold">
+									<td colspan="7">
+										<div class="fold-content">
+											<h3>{{name}}</h3>
+											<table>
+												<thead>
+													<tr>
+														<th>Block</th>
+														<th>No of Orders</th>
+														<th>Market Price</th>
+														<th>Current Price</th>
+														<th>Status</th>
+														<th>Execution</th>
+													</tr>
+												</thead>
+												<tbody>
+
+													{{#each blocks}}
+													<tr>
+														<td>{{this.blockid}}</td>
+														<td>{{this.no}}</td>
+														<td><button type="button" onclick="marketPrice({{this.blockid}})" class="btn-default">Check</button></td>
+														<td><button type="button" onclick="currentPrice({{this.blockid}})" class="btn-default">Check</button></td>
+														<td>{{this.status}}</td>
+														<td><button type="button" onclick="change(this.id)" class="btn-default">Execute</button>
+														</td>
+													</tr>
+													{{/each}}
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+
+								{{/each}}
 
 
-                $(function() {
-                    $(".fold-table tr.view").on("click", function() {
-                        $(this).toggleClass("open").next(".fold").toggleClass("open");
-                    });
-                });
-            </script>
+
+
+							</tbody>
+						</table>
+
+					</div>
+
+
+					<div class=" hidden-xs hidden-sm col-xs-12 col-offset-md-1 col-md-3 col-offset-lg-1 col-lg-3" align="center">
+
+
+
+						<div class="panel panel-default panel-front panel-resizable ">
+
+							<div class="panel-heading">
+
+								<h4 class="panel-title"><a href="#"><img src="https://www.thedivorceangels.com/wp-content/themes/divorceangels/images/avatars/default-11.png" style="width: 100%"></a></h4>
+
+							</div>
+
+							<div class="panel-body">
+								
+								<h4 id="name1"></h4>
+								<h4 id="id1"></h4>
+
+
+
+								<div class="text-right">
+									Registered At :<span id="time1"></span>
+								</div>
+
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12 col-lg-12">
+						&nbsp; &nbsp;
+						<footer id="footerlogo" align="center">
+							<hr>Powered By:<br>
+							<img src="https://www.kurtosys.com/wp-content/uploads/2017/07/SapientGM-logo.png" class="img-rounded" alt="Cinque Terre" width="160" height="25"> &nbsp;
+						</footer>
+					</div>
+				</div>
+
+			</div>
+		</script>
+
+
+
+	</div>
+
+	<script type="text/javascript">
+		function setData() {
+			var d = new Date();
+			var datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+				d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+			if (typeof(localStorage) != "undefined") {
+				document.getElementById("name1").innerHTML = localStorage.name;
+				document.getElementById("id1").innerHTML = localStorage.id;
+				document.getElementById("time1").innerHTML = datestring;
+				document.getElementById("blockSizeTextBox").innerHTML=5;		
+// block size has to be synced by reteriving from database at the time of loading.so 5 has to be replaced by data in the database.
+				}
+		}
+
+
+
+
+
+		$(function() {
+			$(".fold-table tr.view").on("click", function() {
+				$(this).toggleClass("open").next(".fold").toggleClass("open");
+			});
+		});
+
+		var theData = [{
+
+			"name": "MRF",
+			"type": "BUY",
+			"blocks": [{
+					"blockid": "1",
+					"no": 15,
+					"status": "Pending"
+				},
+				{
+					"blockid": "2",
+					"no": 15,
+					"status": "Pending"
+				},
+				{
+					"blockid": "3",
+					"no": 15,
+					"status": "Pending"
+				}
+			]
+		}, {
+			"name": "OIL",
+			"type": "BUY",
+			"blocks": [{
+					"blockid": "4",
+					"No": 15,
+					"status": "Pending"
+				},
+				{
+					"blockid": "5",
+					"No": 15,
+					"status": "Pending"
+				},
+				{
+					"blockid": "6",
+					"no": 15,
+					"status": "Pending"
+				}
+			]
+		}];
+
+
+
+
+		var theTemplateScript = $("#table-template").html();
+
+		var theTemplate = Handlebars.compile(theTemplateScript); /* global _ */
+
+
+		setInterval($(document.body).append(theTemplate(theData)), 2 * 60 * 1000); /* global _ */
+
+
+
+
+		var i = 0;
+		$('button').each(function() {
+			$(this).attr('id', i);
+			i++;
+		});
+
+
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i
+			}; // add zero in front of numbers < 10
+			return i;
+		}
+
+		function change(click) {
+			document.getElementById(click).innerHTML = "Executed";
+			$('#' + click).css("background-color", "lightgreen");
+		}
+
+
+		function marketPrice(check){
+			var myMarketPriceBlockId =check;
+     		$(".modal-body #marketPriceId").val( myMarketPriceBlockId );
+			
+			$('#marketPriceModal').modal("show");
+
+		}
+		function currentPrice(check){
+			
+			var myCurrentPriceBlockId =check;
+     		$(".modal-body #currentPriceId").val( myCurrentPriceBlockId );
+			$('#currentPriceModal').modal("show");
+		}
+
+	</script>
+
+
+
 </body>
+
 </html>
