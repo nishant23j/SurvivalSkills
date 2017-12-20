@@ -15,7 +15,7 @@
 </head>
 
 <body onload="setData()">
-
+    
 	<div class="container">
 		<div class="row">
 
@@ -49,7 +49,6 @@
 					<!--/.container-fluid -->
 				</nav>
 			</div>
-
 
 		</div>
 			<!--modal of configuring the block starts  -->
@@ -267,6 +266,17 @@
 
 	<script type="text/javascript">
 		function setData() {
+            $(document).ready(function(){
+
+                            $.ajax({type: "GET",
+                             url: "demo_test.txt",
+                             //datastring will be Trader ID. and it will be returning blockSize associated with trader in success.
+                             success: function(result){
+                            localStorage.blockSize = result;
+                            document.getElementById("blockSizeTextBox").innerHTML=localStorage.blockSize;                       
+                             }});
+                    });
+
 			var d = new Date();
 			var datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
 				d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
@@ -274,14 +284,10 @@
 				document.getElementById("name1").innerHTML = localStorage.name;
 				document.getElementById("id1").innerHTML = localStorage.id;
 				document.getElementById("time1").innerHTML = datestring;
-				document.getElementById("blockSizeTextBox").innerHTML=5;		
+						
 // block size has to be synced by reteriving from database at the time of loading.so 5 has to be replaced by data in the database.
 				}
 		}
-
-
-
-
 
 		$(function() {
 			$(".fold-table tr.view").on("click", function() {
@@ -365,15 +371,30 @@
 
 		function marketPrice(check){
 			var myMarketPriceBlockId =check;
-     		$(".modal-body #marketPriceId").val( myMarketPriceBlockId );
+             var myMarketPrice;
+            $.ajax({type: "POST",
+                    url: "demo_test.txt",
+                    data: check,//datastring will be Block ID. and it will be returning market prize associated with trader in success.
+                    success: function(marketPrice){
+                            myMarketPrice = marketPrice;                  
+                             }});
+     		$(".modal-body #marketPriceId").val( myMarketPrice );
 			
 			$('#marketPriceModal').modal("show");
 
 		}
 		function currentPrice(check){
-			
+            
 			var myCurrentPriceBlockId =check;
-     		$(".modal-body #currentPriceId").val( myCurrentPriceBlockId );
+            var myCurrentPrice;
+            $.ajax({type: "POST",
+                    url: "demo_test.txt",
+                    data: check,//datastring will be Block ID. and it will be returning current prize associated with trader in success.
+                    success: function(currentPrice){
+                            myCurrentPrice = currentPrice;                  
+                             }});
+            
+     		$(".modal-body #currentPriceId").val( myCurrentPrice );
 			$('#currentPriceModal').modal("show");
 		}
 
